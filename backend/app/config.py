@@ -8,6 +8,9 @@ class Settings(BaseSettings):
 
     database_url: PostgresDsn = "postgresql://postgres:postgres@db:5432/live_city"
 
+    # CORS: через запятую, например "http://localhost:3000,http://158.160.6.2:3000"
+    cors_origins: list[str] = ["*"]
+
     jwt_secret_key: str = "CHANGE_ME_SECRET"  # TODO: вынести в .env
     jwt_algorithm: str = "HS256"
     jwt_access_token_expires_minutes: int = 60
